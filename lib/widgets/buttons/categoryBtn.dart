@@ -1,6 +1,7 @@
 import 'package:abg_utils/abg_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ondemandservice/ui/theme.dart';
 
 Widget cateegoryBtn(String text, Color color, String icon, Function _callback,
     double width, double height,
@@ -60,10 +61,7 @@ Widget cateegoryBtn(String text, Color color, String icon, Function _callback,
             alignment: Alignment.bottomCenter,
             child: Text(
               text,
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w800,
-              ),
+              style: theme.style13W800,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: direction == TextDirection.ltr
