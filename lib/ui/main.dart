@@ -185,8 +185,8 @@ class _MainScreenState extends State<MainScreen> {
                               if (y == 1) state = "booking";
                               // if (y == 2) _state = "cart";
                               if (y == 2) state = "chat";
-                              if (y == 3) state = "notify";
-                              if (y == 4) state = "account";
+                              // if (y == 3) state = "notify";
+                              if (y == 3) state = "account";
                               callbackStackRemoveLast();
                               _redraw();
                             },
@@ -196,16 +196,16 @@ class _MainScreenState extends State<MainScreen> {
                               if (state == "booking") return 1;
                               if (state == "chat") return 2;
                               // if (_state == "cart") return 2;
-                              if (state == "notify") return 3;
-                              if (state == "account") return 4;
+                              // if (state == "notify") return 3;
+                              if (state == "account") return 3;
                             },
                             text: [
                               strings.get(6), // "Home",
                               strings.get(8), // "Booking",
                               // strings.get(268), // "Cart",
                               strings.get(7), // "Chat",
-                              strings.get(96), // "Notify",
                               strings.get(9), // "Account"
+                              // strings.get(96), // "Notify",
                             ],
                             getUnreadMessages: (int index) {
                               if (index == 2) return chatCount;
@@ -220,7 +220,7 @@ class _MainScreenState extends State<MainScreen> {
                               "assets/ondemands/031-book.png",
                               // "assets/ondemands/093-cart.png",
                               "assets/ondemands/001-chat.png",
-                              "assets/ondemands/notifyicon.png",
+                              // "assets/ondemands/notifyicon.png",
                               "assets/ondemands/008-user.png"
                             ]),
                       ),

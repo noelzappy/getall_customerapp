@@ -105,16 +105,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: (theme.darkMode)
                                     ? Colors.black
                                     : Colors.white,
-                                child: Stack(
-                                  children: [
-                                    FlexibleSpaceBar(
-                                        collapseMode: CollapseMode.pin,
-                                        background: _title(),
-                                        titlePadding: EdgeInsets.only(
-                                            bottom: 10, left: 20, right: 20),
-                                        title: _titleSmall()),
-                                  ],
-                                )),
+                                child: Stack(children: [
+                                  FlexibleSpaceBar(
+                                      collapseMode: CollapseMode.pin,
+                                      background: _title(),
+                                      titlePadding: EdgeInsets.only(
+                                          bottom: 10, left: 20, right: 20),
+                                      title: _titleSmall()),
+                                ])),
                           ))
                     ];
                   },
@@ -183,23 +181,33 @@ class _HomeScreenState extends State<HomeScreen> {
         alignment: Alignment.bottomLeft,
         padding:
             EdgeInsets.only(bottom: _scroller, left: 20, right: 20, top: 25),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              !_mainModel.searchActivate ? strings.get(93) : strings.get(122),
+        child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                !_mainModel.searchActivate ? strings.get(93) : strings.get(122),
 
-              /// "Home services", // "Search",
-              style: theme.style16W800,
-            ),
-            SizedBox(
-              height: 3,
-            ),
-            Text(strings.get(94), // Find what you need
-                style: theme.style10W600Grey),
-          ],
-        ));
+                /// "Home services", // "Search",
+                style: theme.style16W800,
+              ),
+              SizedBox(
+                height: 3,
+              ),
+              Text(strings.get(94), // Find what you need
+                  style: theme.style10W600Grey),
+            ],
+          ),
+          Spacer(),
+          Spacer(),
+          IconButton(
+            icon: Image.asset("assets/ondemands/notifyicon.png"),
+            onPressed: () {
+              route("notify");
+            },
+          ),
+        ]));
   }
 
   _body() {
@@ -364,22 +372,21 @@ class _HomeScreenState extends State<HomeScreen> {
         for (var e in categories) {
           if (e.parent.isNotEmpty) continue;
           list2.add(
-            //   cateegoryBtn(
-            //       getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
-            //       () {
-            //     _mainModel.categoryData = e;
-            //     route("category");
-            //   }, windowWidth / 2 - 20, windowWidth * 0.25,
-            //       direction: strings.direction),
-            // );
-
-            button157(
+            cateegoryBtn(
                 getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
                 () {
               _mainModel.categoryData = e;
               route("category");
-            }, windowWidth / 2 - 20, windowWidth * 0.25,
+            }, windowWidth / 3 - 20, windowWidth * 0.25,
                 direction: strings.direction),
+
+            // button157(
+            //     getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
+            //     () {
+            //   _mainModel.categoryData = e;
+            //   route("category");
+            // }, windowWidth / 2 - 20, windowWidth * 0.25,
+            //     direction: strings.direction),
           );
         }
         list.add(Container(
