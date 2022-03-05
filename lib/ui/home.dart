@@ -179,8 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
   _titleSmall() {
     return Container(
         alignment: Alignment.bottomLeft,
-        padding:
-            EdgeInsets.only(bottom: _scroller, left: 20, right: 20, top: 25),
+        padding: EdgeInsets.only(bottom: _scroller, top: 25),
         child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
           Column(
             mainAxisSize: MainAxisSize.min,
