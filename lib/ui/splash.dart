@@ -71,27 +71,17 @@ class _SplashScreenState extends State<SplashScreen> {
     windowWidth = MediaQuery.of(context).size.width;
     windowHeight = MediaQuery.of(context).size.height;
     windowSize = min(windowWidth, windowHeight);
-    dprint(
-        "splash theme.logoAsset=${theme.logoAsset} theme.logo=${theme.logo}");
     return Scaffold(
         body: Stack(
       children: <Widget>[
-        Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Color(0xFFFDC208), Color(0xFFE62D3D)])),
-        ),
         Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                  width: windowWidth * 0.9,
-                  height: windowWidth * 0.9,
-                  child: Image.asset("assets/splash-logo.png",
-                      fit: BoxFit.contain)),
+                  width: windowWidth,
+                  height: windowWidth,
+                  child: Image.asset("assets/splash.gif", fit: BoxFit.contain)),
             ],
           ),
         ),
