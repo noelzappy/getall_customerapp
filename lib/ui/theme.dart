@@ -4,12 +4,11 @@ import 'package:flutter/material.dart';
 AppTheme theme = AppTheme(false);
 late Decoration decor;
 
-class AppTheme implements DefaultTheme{
-
+class AppTheme implements DefaultTheme {
   @override
   Color blackColorTitleBkg = Color(0xff202020);
 
-  Color colorBackground = Color(0xfff1f6fe);
+  Color colorBackground = Color(0xfff1f6ae);
 
   @override
   bool darkMode = false;
@@ -21,7 +20,8 @@ class AppTheme implements DefaultTheme{
   double radius = 8;
 
   // splash
-  String logo = ""; // https://firebasestorage.googleapis.com/v0/b/brevix.appspot.com/o/apps%2Fc0b154bc-050a-4bce-babd-04d50f889cbb.jpg?alt=media&token=ef7a8e8a-7737-4504-980c-dbc48b2947ee
+  String logo =
+      ""; // https://firebasestorage.googleapis.com/v0/b/brevix.appspot.com/o/apps%2Fc0b154bc-050a-4bce-babd-04d50f889cbb.jpg?alt=media&token=ef7a8e8a-7737-4504-980c-dbc48b2947ee
   String splashImage = "";
   bool logoAsset = true;
   bool splashImageAsset = true;
@@ -88,117 +88,239 @@ class AppTheme implements DefaultTheme{
   bool booking5LogoAsset = true;
   String booking5Logo = "";
 
-  AppTheme(bool _dartMode, {
+  AppTheme(
+    bool _dartMode, {
     this.mainColor = const Color(0xff69c4ff),
     this.colorBackground = const Color(0xfff1f6fe),
     this.blackColorTitleBkg = const Color(0xff202020),
     // splash
-    this.logo = "", this.splashImage = "", this.logoAsset = true,
+    this.logo = "",
+    this.splashImage = "",
+    this.logoAsset = true,
     this.splashImageAsset = true,
     this.splashColor = const Color(0xff1c7bab),
     // lang
     this.langLogoAsset = true,
     this.langLogo = "",
     // login
-    this.loginImageAsset = true, this.loginLogo = "", this.loginLogoAsset = true, this.loginImage = "",
+    this.loginImageAsset = true,
+    this.loginLogo = "",
+    this.loginLogoAsset = true,
+    this.loginImage = "",
     // register
-    this.registerLogoAsset = true, this.registerLogo = "",
+    this.registerLogoAsset = true,
+    this.registerLogo = "",
     // home
-    this.homeLogoAsset = true, this.homeLogo = "",
+    this.homeLogoAsset = true,
+    this.homeLogo = "",
     // provider
     this.providerStarColor = const Color(0xFFFFA726),
-    this.providerGLogoAsset = true, this.providerGLogo = "",
-    this.providerRLogoAsset = true, this.providerRLogo = "",
+    this.providerGLogoAsset = true,
+    this.providerGLogo = "",
+    this.providerRLogoAsset = true,
+    this.providerRLogo = "",
     // service
     this.serviceStarColor = const Color(0xFFFFA726),
-    this.serviceGLogoAsset = true, this.serviceGLogo = "",
-    this.serviceRLogoAsset = true, this.serviceRLogo = "",
+    this.serviceGLogoAsset = true,
+    this.serviceGLogo = "",
+    this.serviceRLogoAsset = true,
+    this.serviceRLogo = "",
     // category
     this.categoryStarColor = const Color(0xFFFFA726),
     this.categoryBoardColor = const Color(0xFF66BB6A),
     // booking
-    this.bookingNotFoundImageAsset = true, this.bookingNotFoundImage = "",
+    this.bookingNotFoundImageAsset = true,
+    this.bookingNotFoundImage = "",
     // chat
-    this.chatLogoAsset = true, this.chatLogo = "",
+    this.chatLogoAsset = true,
+    this.chatLogo = "",
     // chat 2
-    this.chat2LogoAsset = true, this.chat2Logo = "",
-    this.chatSendButtonImageAsset = true, this.chatSendButtonImage = "",
+    this.chat2LogoAsset = true,
+    this.chat2Logo = "",
+    this.chatSendButtonImageAsset = true,
+    this.chatSendButtonImage = "",
     // notify
-    this.notifyLogoAsset = true, this.notifyLogo = "",
-    this.notifyNotFoundImageAsset = true, this.notifyNotFoundImage = "",
+    this.notifyLogoAsset = true,
+    this.notifyLogo = "",
+    this.notifyNotFoundImageAsset = true,
+    this.notifyNotFoundImage = "",
     // account
-    this.accountLogoAsset = true, this.accountLogo = "",
+    this.accountLogoAsset = true,
+    this.accountLogo = "",
     // profile
-    this.profileLogoAsset = true, this.profileLogo = "",
+    this.profileLogoAsset = true,
+    this.profileLogo = "",
     // documents
-    this.documentsLogoAsset = true, this.documentsLogo = "",
+    this.documentsLogoAsset = true,
+    this.documentsLogo = "",
     // booking 1
     this.booking1CheckBoxColor = const Color(0xFFFFA726),
     // booking 4
     this.booking4CheckBoxColor = const Color(0xFFFFA726),
     // booking 5
-    this.booking5LogoAsset = true, this.booking5Logo = "",
-  }){
+    this.booking5LogoAsset = true,
+    this.booking5Logo = "",
+  }) {
     darkMode = _dartMode;
     backgroundColor = Colors.transparent;
     secondColor = Colors.transparent;
-    style10W400White = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-        fontSize: 10, fontWeight: FontWeight.w400, color: Colors.white);
-    style10W400 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 10, fontWeight: FontWeight.w400, color: (darkMode) ? Colors.white : Colors.black);
-    style11W600 = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-        fontSize: 11, fontWeight: FontWeight.w600, color: (darkMode) ? Colors.white : Colors.black);
-    style12W400 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 12, fontWeight: FontWeight.w400, color: (darkMode) ? Colors.white : Colors.black);
-    style12W600Stars = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 12, fontWeight: FontWeight.w600, color: providerStarColor);
-    style12W400D = TextStyle(fontFamily: _font, letterSpacing: 0.4, decoration: TextDecoration.lineThrough,
-        fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey);
-    style12W600StarsService = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 12, fontWeight: FontWeight.w600, color: serviceStarColor);
-    style12W600StarsCategory = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 12, fontWeight: FontWeight.w600, color: categoryStarColor);
-    style12W800MainColor = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 12, fontWeight: FontWeight.w800, color: mainColor);
-    style12W800 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 12, fontWeight: FontWeight.w800, color: (darkMode) ? Colors.white : Colors.black);
-    style13W800 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 13, fontWeight: FontWeight.w800, color: (darkMode) ? Colors.white : Colors.black);
-    style13W800Red = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-        fontSize: 13, fontWeight: FontWeight.w800, color: Colors.red);
-    style13W400 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 13, fontWeight: FontWeight.w400, color: (darkMode) ? Colors.white : Colors.black);
-    style13W400U = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-        fontSize: 13, fontWeight: FontWeight.w400,
+    style10W400White = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.4,
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+        color: Colors.white);
+    style10W400 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style11W600 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.4,
+        fontSize: 11,
+        fontWeight: FontWeight.w600,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style12W400 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style12W600Stars = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        color: providerStarColor);
+    style12W400D = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.4,
+        decoration: TextDecoration.lineThrough,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: Colors.grey);
+    style12W600StarsService = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        color: serviceStarColor);
+    style12W600StarsCategory = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        color: categoryStarColor);
+    style12W800MainColor = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 12,
+        fontWeight: FontWeight.w800,
+        color: mainColor);
+    style12W800 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 12,
+        fontWeight: FontWeight.w800,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style13W800 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 13,
+        fontWeight: FontWeight.w800,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style13W800Red = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.4,
+        fontSize: 13,
+        fontWeight: FontWeight.w800,
+        color: Colors.red);
+    style13W400 = TextStyle(
+        fontFamily: _font,
+        // letterSpacing: 0.6,
+        fontSize: 10,
+        fontWeight: FontWeight.bold,
+        color: (darkMode) ? Colors.white : Colors.black);
+
+    style13W400U = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.4,
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
         decoration: TextDecoration.lineThrough,
         color: (darkMode) ? Colors.white : Colors.black);
-    style14W400 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 14, fontWeight: FontWeight.w400, color: (darkMode) ? Colors.white : Colors.black);
-    style14W800MainColor = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-        fontSize: 14, fontWeight: FontWeight.w800, color: mainColor);
-    style14W800 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 14, fontWeight: FontWeight.w800, color: (darkMode) ? Colors.white : Colors.black);
-    style14W600White = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-        fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white);
-    style15W400 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 15, fontWeight: FontWeight.w400, color: (darkMode) ? Colors.white : Colors.black);
-    style16W800 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 16, fontWeight: FontWeight.w800, color: (darkMode) ? Colors.white : Colors.black);
-    style16W400U = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 16, fontWeight: FontWeight.w400,
+    style14W400 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style14W800MainColor = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.4,
+        fontSize: 14,
+        fontWeight: FontWeight.w800,
+        color: mainColor);
+    style14W800 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 14,
+        fontWeight: FontWeight.w800,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style14W600White = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.4,
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        color: Colors.white);
+    style15W400 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 15,
+        fontWeight: FontWeight.w400,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style16W800 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 16,
+        fontWeight: FontWeight.w800,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style16W400U = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
         decoration: TextDecoration.lineThrough,
         color: (darkMode) ? Colors.white : Colors.black);
-    style18W800 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 18, fontWeight: FontWeight.w800, color: (darkMode) ? Colors.white : Colors.black);
-    style20W800 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 20, fontWeight: FontWeight.w800, color: (darkMode) ? Colors.white : Colors.black);
-    style25W800 = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-        fontSize: 25, fontWeight: FontWeight.w800, color: (darkMode) ? Colors.white : Colors.black);
-    style25W400 = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-        fontSize: 25, fontWeight: FontWeight.w400, color: (darkMode) ? Colors.white : Colors.black);
+    style18W800 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 18,
+        fontWeight: FontWeight.w800,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style20W800 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 20,
+        fontWeight: FontWeight.w800,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style25W800 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.6,
+        fontSize: 25,
+        fontWeight: FontWeight.w800,
+        color: (darkMode) ? Colors.white : Colors.black);
+    style25W400 = TextStyle(
+        fontFamily: _font,
+        letterSpacing: 0.4,
+        fontSize: 25,
+        fontWeight: FontWeight.w400,
+        color: (darkMode) ? Colors.white : Colors.black);
 
     decor = BoxDecoration(
-      color: (darkMode) ? blackColorTitleBkg: Colors.white,
+      color: (darkMode) ? blackColorTitleBkg : Colors.white,
       borderRadius: BorderRadius.circular(radius),
       border: Border.all(color: Colors.grey.withAlpha(20)),
       // boxShadow: [
@@ -215,153 +337,212 @@ class AppTheme implements DefaultTheme{
   }
 
   Map<String, dynamic> toJson() => {
-    'darkMode': darkMode,
-    'mainColor' : mainColor.value.toString(),
-    'colorBackground' : colorBackground.value.toString(),
-    'blackColorTitleBkg' : blackColorTitleBkg.value.toString(),
-    // splash
-    'logo' : logo,
-    'splashImage' : splashImage,
-    'logoAsset' : logoAsset,
-    'splashImageAsset' : splashImageAsset,
-    'splashColor' : splashColor.value.toString(),
-    // lang
-    'langLogoAsset' : langLogoAsset,
-    'langLogo' : langLogo,
-    // login
-    'loginLogoAsset' : loginLogoAsset,
-    'loginLogo' : loginLogo,
-    'loginImageAsset' : loginImageAsset,
-    'loginImage' : loginImage,
-    // register
-    'registerLogoAsset' : registerLogoAsset,
-    'registerLogo' : registerLogo,
-    // home
-    'homeLogoAsset' : homeLogoAsset,
-    'homeLogo' : homeLogo,
-    // provider
-    'providerGLogoAsset' : providerGLogoAsset,
-    'providerGLogo' : providerGLogo,
-    'providerRLogoAsset' : providerRLogoAsset,
-    'providerRLogo' : providerRLogo,
-    'providerStarColor' : providerStarColor.value.toString(),
-    // service
-    'serviceGLogoAsset' : serviceGLogoAsset,
-    'serviceGLogo' : serviceGLogo,
-    'serviceRLogoAsset' : serviceRLogoAsset,
-    'serviceRLogo' : serviceRLogo,
-    'serviceStarColor' : serviceStarColor.value.toString(),
-    // category
-    'categoryStarColor' : categoryStarColor.value.toString(),
-    'categoryBoardColor' : categoryBoardColor.value.toString(),
-    // booking
-    'bookingNotFoundImageAsset' : bookingNotFoundImageAsset,
-    'bookingNotFoundImage' : bookingNotFoundImage,
-    // chat
-    'chatLogoAsset' : chatLogoAsset,
-    'chatLogo' : chatLogo,
-    // chat 2
-    'chat2LogoAsset' : chat2LogoAsset,
-    'chat2Logo' : chat2Logo,
-    'chatSendButtonImageAsset' : chatSendButtonImageAsset,
-    'chatSendButtonImage' : chatSendButtonImage,
-    // notify
-    'notifyLogoAsset' : notifyLogoAsset,
-    'notifyLogo' : notifyLogo,
-    'notifyNotFoundImageAsset' : notifyNotFoundImageAsset,
-    'notifyNotFoundImage' : notifyNotFoundImage,
-    // account
-    'accountLogoAsset' : accountLogoAsset,
-    'accountLogo' : accountLogo,
-    // profile
-    'profileLogoAsset' : accountLogoAsset,
-    'profileLogo' : accountLogo,
-    // documents
-    'documentsLogoAsset' : documentsLogoAsset,
-    'documentsLogo' : documentsLogo,
-    // booking 1
-    'booking1CheckBoxColor' : booking1CheckBoxColor.value.toString(),
-    // booking 4
-    'booking4CheckBoxColor' : booking4CheckBoxColor.value.toString(),
-    // booking 5
-    'booking5LogoAsset' : booking5LogoAsset,
-    'booking5Logo' : booking5Logo,
-  };
+        'darkMode': darkMode,
+        'mainColor': mainColor.value.toString(),
+        'colorBackground': colorBackground.value.toString(),
+        'blackColorTitleBkg': blackColorTitleBkg.value.toString(),
+        // splash
+        'logo': logo,
+        'splashImage': splashImage,
+        'logoAsset': logoAsset,
+        'splashImageAsset': splashImageAsset,
+        'splashColor': splashColor.value.toString(),
+        // lang
+        'langLogoAsset': langLogoAsset,
+        'langLogo': langLogo,
+        // login
+        'loginLogoAsset': loginLogoAsset,
+        'loginLogo': loginLogo,
+        'loginImageAsset': loginImageAsset,
+        'loginImage': loginImage,
+        // register
+        'registerLogoAsset': registerLogoAsset,
+        'registerLogo': registerLogo,
+        // home
+        'homeLogoAsset': homeLogoAsset,
+        'homeLogo': homeLogo,
+        // provider
+        'providerGLogoAsset': providerGLogoAsset,
+        'providerGLogo': providerGLogo,
+        'providerRLogoAsset': providerRLogoAsset,
+        'providerRLogo': providerRLogo,
+        'providerStarColor': providerStarColor.value.toString(),
+        // service
+        'serviceGLogoAsset': serviceGLogoAsset,
+        'serviceGLogo': serviceGLogo,
+        'serviceRLogoAsset': serviceRLogoAsset,
+        'serviceRLogo': serviceRLogo,
+        'serviceStarColor': serviceStarColor.value.toString(),
+        // category
+        'categoryStarColor': categoryStarColor.value.toString(),
+        'categoryBoardColor': categoryBoardColor.value.toString(),
+        // booking
+        'bookingNotFoundImageAsset': bookingNotFoundImageAsset,
+        'bookingNotFoundImage': bookingNotFoundImage,
+        // chat
+        'chatLogoAsset': chatLogoAsset,
+        'chatLogo': chatLogo,
+        // chat 2
+        'chat2LogoAsset': chat2LogoAsset,
+        'chat2Logo': chat2Logo,
+        'chatSendButtonImageAsset': chatSendButtonImageAsset,
+        'chatSendButtonImage': chatSendButtonImage,
+        // notify
+        'notifyLogoAsset': notifyLogoAsset,
+        'notifyLogo': notifyLogo,
+        'notifyNotFoundImageAsset': notifyNotFoundImageAsset,
+        'notifyNotFoundImage': notifyNotFoundImage,
+        // account
+        'accountLogoAsset': accountLogoAsset,
+        'accountLogo': accountLogo,
+        // profile
+        'profileLogoAsset': accountLogoAsset,
+        'profileLogo': accountLogo,
+        // documents
+        'documentsLogoAsset': documentsLogoAsset,
+        'documentsLogo': documentsLogo,
+        // booking 1
+        'booking1CheckBoxColor': booking1CheckBoxColor.value.toString(),
+        // booking 4
+        'booking4CheckBoxColor': booking4CheckBoxColor.value.toString(),
+        // booking 5
+        'booking5LogoAsset': booking5LogoAsset,
+        'booking5Logo': booking5Logo,
+      };
 
-  factory AppTheme.fromJson(Map<String, dynamic> data){
+  factory AppTheme.fromJson(Map<String, dynamic> data) {
     return AppTheme(
       false,
       //(data["darkMode"] != null) ? data["darkMode"] : false,
-      mainColor: (data["mainColor"] != null) ? getColor(data["mainColor"]) : Color(0xff69c4ff),
-      colorBackground: (data["colorBackground"] != null) ? getColor(data["colorBackground"]) : Color(0xfff1f6fe),
-      blackColorTitleBkg: (data["blackColorTitleBkg"] != null) ? getColor(data["blackColorTitleBkg"]) : Color(0xff202020),
+      mainColor: (data["mainColor"] != null)
+          ? getColor(data["mainColor"])
+          : Color(0xff69c4ff),
+      colorBackground: (data["colorBackground"] != null)
+          ? getColor(data["colorBackground"])
+          : Color(0xfff1f6fe),
+      blackColorTitleBkg: (data["blackColorTitleBkg"] != null)
+          ? getColor(data["blackColorTitleBkg"])
+          : Color(0xff202020),
       // splash
-      logo : (data["logo"] != null) ? data["logo"]: "",
-      splashImage : (data["splashImage"] != null) ? data["splashImage"]: "",
-      logoAsset : (data["logoAsset"] != null) ? data["logoAsset"]: true,
-      splashImageAsset : (data["splashImageAsset"] != null) ? data["splashImageAsset"]: true,
-      splashColor : (data["splashColor"] != null) ? getColor(data["splashColor"]) : Color(0xff1c7bab),
+      logo: (data["logo"] != null) ? data["logo"] : "",
+      splashImage: (data["splashImage"] != null) ? data["splashImage"] : "",
+      logoAsset: (data["logoAsset"] != null) ? data["logoAsset"] : true,
+      splashImageAsset:
+          (data["splashImageAsset"] != null) ? data["splashImageAsset"] : true,
+      splashColor: (data["splashColor"] != null)
+          ? getColor(data["splashColor"])
+          : Color(0xff1c7bab),
       // lang
-      langLogoAsset : (data["langLogoAsset"] != null) ? data["langLogoAsset"]: true,
-      langLogo : (data["langLogo"] != null) ? data["langLogo"]: "",
+      langLogoAsset:
+          (data["langLogoAsset"] != null) ? data["langLogoAsset"] : true,
+      langLogo: (data["langLogo"] != null) ? data["langLogo"] : "",
       // login
-      loginLogoAsset : (data["loginLogoAsset"] != null) ? data["loginLogoAsset"]: true,
-      loginLogo : (data["loginLogo"] != null) ? data["loginLogo"]: "",
-      loginImageAsset : (data["loginImageAsset"] != null) ? data["loginImageAsset"]: true,
-      loginImage : (data["loginImage"] != null) ? data["loginImage"]: "",
+      loginLogoAsset:
+          (data["loginLogoAsset"] != null) ? data["loginLogoAsset"] : true,
+      loginLogo: (data["loginLogo"] != null) ? data["loginLogo"] : "",
+      loginImageAsset:
+          (data["loginImageAsset"] != null) ? data["loginImageAsset"] : true,
+      loginImage: (data["loginImage"] != null) ? data["loginImage"] : "",
       // register
-      registerLogoAsset : (data["registerLogoAsset"] != null) ? data["registerLogoAsset"]: true,
-      registerLogo : (data["registerLogo"] != null) ? data["registerLogo"]: "",
+      registerLogoAsset: (data["registerLogoAsset"] != null)
+          ? data["registerLogoAsset"]
+          : true,
+      registerLogo: (data["registerLogo"] != null) ? data["registerLogo"] : "",
       // home
-      homeLogoAsset : (data["homeLogoAsset"] != null) ? data["homeLogoAsset"]: true,
-      homeLogo : (data["homeLogo"] != null) ? data["homeLogo"]: "",
+      homeLogoAsset:
+          (data["homeLogoAsset"] != null) ? data["homeLogoAsset"] : true,
+      homeLogo: (data["homeLogo"] != null) ? data["homeLogo"] : "",
       // provider
-      providerStarColor : (data["providerStarColor"] != null) ? toColor(data["providerStarColor"]) : Color(0xFFFFA726),
-      providerGLogoAsset : (data["providerGLogoAsset"] != null) ? data["providerGLogoAsset"]: true,
-      providerGLogo : (data["providerGLogo"] != null) ? data["providerGLogo"]: "",
-      providerRLogoAsset : (data["providerRLogoAsset"] != null) ? data["providerRLogoAsset"]: true,
-      providerRLogo : (data["providerRLogo"] != null) ? data["providerRLogo"]: "",
+      providerStarColor: (data["providerStarColor"] != null)
+          ? toColor(data["providerStarColor"])
+          : Color(0xFFFFA726),
+      providerGLogoAsset: (data["providerGLogoAsset"] != null)
+          ? data["providerGLogoAsset"]
+          : true,
+      providerGLogo:
+          (data["providerGLogo"] != null) ? data["providerGLogo"] : "",
+      providerRLogoAsset: (data["providerRLogoAsset"] != null)
+          ? data["providerRLogoAsset"]
+          : true,
+      providerRLogo:
+          (data["providerRLogo"] != null) ? data["providerRLogo"] : "",
       // service
-      serviceStarColor : (data["serviceStarColor"] != null) ? toColor(data["serviceStarColor"]) : Color(0xFFFFA726),
-      serviceGLogoAsset : (data["serviceGLogoAsset"] != null) ? data["serviceGLogoAsset"]: true,
-      serviceGLogo : (data["serviceGLogo"] != null) ? data["serviceGLogo"]: "",
-      serviceRLogoAsset : (data["serviceRLogoAsset"] != null) ? data["serviceRLogoAsset"]: true,
-      serviceRLogo : (data["serviceRLogo"] != null) ? data["serviceRLogo"]: "",
+      serviceStarColor: (data["serviceStarColor"] != null)
+          ? toColor(data["serviceStarColor"])
+          : Color(0xFFFFA726),
+      serviceGLogoAsset: (data["serviceGLogoAsset"] != null)
+          ? data["serviceGLogoAsset"]
+          : true,
+      serviceGLogo: (data["serviceGLogo"] != null) ? data["serviceGLogo"] : "",
+      serviceRLogoAsset: (data["serviceRLogoAsset"] != null)
+          ? data["serviceRLogoAsset"]
+          : true,
+      serviceRLogo: (data["serviceRLogo"] != null) ? data["serviceRLogo"] : "",
       // category
-      categoryStarColor : (data["categoryStarColor"] != null) ? toColor(data["categoryStarColor"]) : Color(0xFFFFA726),
-      categoryBoardColor : (data["categoryBoardColor"] != null) ? toColor(data["categoryBoardColor"]) : Color(0xFF66BB6A),
+      categoryStarColor: (data["categoryStarColor"] != null)
+          ? toColor(data["categoryStarColor"])
+          : Color(0xFFFFA726),
+      categoryBoardColor: (data["categoryBoardColor"] != null)
+          ? toColor(data["categoryBoardColor"])
+          : Color(0xFF66BB6A),
       // booking
-      bookingNotFoundImageAsset : (data["bookingNotFoundImageAsset"] != null) ? data["bookingNotFoundImageAsset"]: true,
-      bookingNotFoundImage : (data["bookingNotFoundImage"] != null) ? data["bookingNotFoundImage"]: "",
+      bookingNotFoundImageAsset: (data["bookingNotFoundImageAsset"] != null)
+          ? data["bookingNotFoundImageAsset"]
+          : true,
+      bookingNotFoundImage: (data["bookingNotFoundImage"] != null)
+          ? data["bookingNotFoundImage"]
+          : "",
       // chat
-      chatLogoAsset : (data["chatLogoAsset"] != null) ? data["chatLogoAsset"]: true,
-      chatLogo : (data["chatLogo"] != null) ? data["chatLogo"]: "",
+      chatLogoAsset:
+          (data["chatLogoAsset"] != null) ? data["chatLogoAsset"] : true,
+      chatLogo: (data["chatLogo"] != null) ? data["chatLogo"] : "",
       // chat 2
-      chat2LogoAsset : (data["chat2LogoAsset"] != null) ? data["chat2LogoAsset"]: true,
-      chat2Logo : (data["chat2Logo"] != null) ? data["chat2Logo"]: "",
-      chatSendButtonImageAsset : (data["chatSendButtonImageAsset"] != null) ? data["chatSendButtonImageAsset"]: true,
-      chatSendButtonImage : (data["chatSendButtonImage"] != null) ? data["chatSendButtonImage"]: "",
+      chat2LogoAsset:
+          (data["chat2LogoAsset"] != null) ? data["chat2LogoAsset"] : true,
+      chat2Logo: (data["chat2Logo"] != null) ? data["chat2Logo"] : "",
+      chatSendButtonImageAsset: (data["chatSendButtonImageAsset"] != null)
+          ? data["chatSendButtonImageAsset"]
+          : true,
+      chatSendButtonImage: (data["chatSendButtonImage"] != null)
+          ? data["chatSendButtonImage"]
+          : "",
       // notify
-      notifyLogoAsset : (data["notifyLogoAsset"] != null) ? data["notifyLogoAsset"]: true,
-      notifyLogo : (data["notifyLogo"] != null) ? data["notifyLogo"]: "",
-      notifyNotFoundImageAsset : (data["notifyNotFoundImageAsset"] != null) ? data["notifyNotFoundImageAsset"]: true,
-      notifyNotFoundImage : (data["notifyNotFoundImage"] != null) ? data["notifyNotFoundImage"]: "",
+      notifyLogoAsset:
+          (data["notifyLogoAsset"] != null) ? data["notifyLogoAsset"] : true,
+      notifyLogo: (data["notifyLogo"] != null) ? data["notifyLogo"] : "",
+      notifyNotFoundImageAsset: (data["notifyNotFoundImageAsset"] != null)
+          ? data["notifyNotFoundImageAsset"]
+          : true,
+      notifyNotFoundImage: (data["notifyNotFoundImage"] != null)
+          ? data["notifyNotFoundImage"]
+          : "",
       // account
-      accountLogoAsset : (data["accountLogoAsset"] != null) ? data["accountLogoAsset"]: true,
-      accountLogo : (data["accountLogo"] != null) ? data["accountLogo"]: "",
+      accountLogoAsset:
+          (data["accountLogoAsset"] != null) ? data["accountLogoAsset"] : true,
+      accountLogo: (data["accountLogo"] != null) ? data["accountLogo"] : "",
       // profile
-      profileLogoAsset : (data["profileLogoAsset"] != null) ? data["profileLogoAsset"]: true,
-      profileLogo : (data["profileLogo"] != null) ? data["profileLogo"]: "",
+      profileLogoAsset:
+          (data["profileLogoAsset"] != null) ? data["profileLogoAsset"] : true,
+      profileLogo: (data["profileLogo"] != null) ? data["profileLogo"] : "",
       //  documents
-      documentsLogoAsset : (data["documentsLogoAsset"] != null) ? data["documentsLogoAsset"]: true,
-      documentsLogo : (data["documentsLogo"] != null) ? data["documentsLogo"]: "",
+      documentsLogoAsset: (data["documentsLogoAsset"] != null)
+          ? data["documentsLogoAsset"]
+          : true,
+      documentsLogo:
+          (data["documentsLogo"] != null) ? data["documentsLogo"] : "",
       // booking 1
-      booking1CheckBoxColor : (data["booking1CheckBoxColor"] != null) ? toColor(data["booking1CheckBoxColor"]) : Color(0xFFFFA726),
+      booking1CheckBoxColor: (data["booking1CheckBoxColor"] != null)
+          ? toColor(data["booking1CheckBoxColor"])
+          : Color(0xFFFFA726),
       // booking 4
-      booking4CheckBoxColor : (data["booking4CheckBoxColor"] != null) ? toColor(data["booking4CheckBoxColor"]) : Color(0xFFFFA726),
+      booking4CheckBoxColor: (data["booking4CheckBoxColor"] != null)
+          ? toColor(data["booking4CheckBoxColor"])
+          : Color(0xFFFFA726),
       // booking 5
-      booking5LogoAsset : (data["booking5LogoAsset"] != null) ? data["booking5LogoAsset"]: true,
-      booking5Logo : (data["booking5Logo"] != null) ? data["booking5Logo"]: "",
+      booking5LogoAsset: (data["booking5LogoAsset"] != null)
+          ? data["booking5LogoAsset"]
+          : true,
+      booking5Logo: (data["booking5Logo"] != null) ? data["booking5Logo"] : "",
     );
   }
 
@@ -374,8 +555,12 @@ class AppTheme implements DefaultTheme{
   static final String _font = "Montserrat";
 
   @override
-  TextStyle style10W800White = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-      fontSize: 10, fontWeight: FontWeight.w800, color: Colors.white);
+  TextStyle style10W800White = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.4,
+      fontSize: 10,
+      fontWeight: FontWeight.w800,
+      color: Colors.white);
 
   @override
   late TextStyle style10W400White;
@@ -383,18 +568,34 @@ class AppTheme implements DefaultTheme{
   @override
   late TextStyle style10W400;
 
-  TextStyle style10W600Grey = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 10, fontWeight: FontWeight.w600, color: Colors.grey);
+  TextStyle style10W600Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 10,
+      fontWeight: FontWeight.w600,
+      color: Colors.grey);
 
-  TextStyle style10W600White = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 10, fontWeight: FontWeight.w600, color: Colors.white);
+  TextStyle style10W600White = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 10,
+      fontWeight: FontWeight.w600,
+      color: Colors.white);
 
-  TextStyle style11W600Grey = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-      fontSize: 11, fontWeight: FontWeight.w600, color: Colors.grey);
+  TextStyle style11W600Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.4,
+      fontSize: 11,
+      fontWeight: FontWeight.w600,
+      color: Colors.grey);
 
   @override
-  TextStyle style11W800W = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-      fontSize: 11, fontWeight: FontWeight.w800, color: Colors.white);
+  TextStyle style11W800W = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.4,
+      fontSize: 11,
+      fontWeight: FontWeight.w800,
+      color: Colors.white);
 
   @override
   late TextStyle style11W600;
@@ -404,22 +605,42 @@ class AppTheme implements DefaultTheme{
   late TextStyle style12W400D;
 
   @override
-  TextStyle style12W800W = TextStyle(fontFamily: _font, letterSpacing: 0.4,
-      fontSize: 12, fontWeight: FontWeight.w800, color: Colors.white);
+  TextStyle style12W800W = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.4,
+      fontSize: 12,
+      fontWeight: FontWeight.w800,
+      color: Colors.white);
 
   @override
-  TextStyle style12W600Grey = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 12, fontWeight: FontWeight.w600, color: Colors.grey);
+  TextStyle style12W600Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: Colors.grey);
 
-  TextStyle style12W600Blue = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 12, fontWeight: FontWeight.w600, color: Colors.blue);
+  TextStyle style12W600Blue = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: Colors.blue);
 
-  TextStyle style12W600Red = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 12, fontWeight: FontWeight.w600, color: Colors.red);
+  TextStyle style12W600Red = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: Colors.red);
 
   @override
-  TextStyle style12W600Orange = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 12, fontWeight: FontWeight.w600, color: Colors.orange);
+  TextStyle style12W600Orange = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: Colors.orange);
 
   @override
   late TextStyle style12W800MainColor;
@@ -428,8 +649,12 @@ class AppTheme implements DefaultTheme{
   late TextStyle style12W600StarsCategory;
 
   @override
-  TextStyle style12W600White = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white);
+  TextStyle style12W600White = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: Colors.white);
 
   @override
   late TextStyle style12W800;
@@ -437,8 +662,12 @@ class AppTheme implements DefaultTheme{
   late TextStyle style13W800;
 
   @override
-  TextStyle style13W800Blue = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 13, fontWeight: FontWeight.w800, color: Colors.blue);
+  TextStyle style13W800Blue = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 13,
+      fontWeight: FontWeight.w800,
+      color: Colors.blue);
 
   @override
   late TextStyle style13W800Red;
@@ -448,14 +677,22 @@ class AppTheme implements DefaultTheme{
   late TextStyle style14W400;
 
   @override
-  TextStyle style14W400Grey = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey);
+  TextStyle style14W400Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: Colors.grey);
 
   @override
   late TextStyle style14W800;
 
-  TextStyle style14W600Grey = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 14, fontWeight: FontWeight.w600, color: Colors.grey);
+  TextStyle style14W600Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+      color: Colors.grey);
 
   @override
   late TextStyle style14W800MainColor;
@@ -466,52 +703,108 @@ class AppTheme implements DefaultTheme{
   late TextStyle style16W400U;
 
   @override
-  TextStyle style16W800White = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 16, fontWeight: FontWeight.w800, color: Colors.white);
+  TextStyle style16W800White = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 16,
+      fontWeight: FontWeight.w800,
+      color: Colors.white);
 
-  TextStyle style16W800W = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 16, fontWeight: FontWeight.w800, color: Colors.white);
-  TextStyle style14W800W = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 14, fontWeight: FontWeight.w800, color: Colors.white);
+  TextStyle style16W800W = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 16,
+      fontWeight: FontWeight.w800,
+      color: Colors.white);
+  TextStyle style14W800W = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 14,
+      fontWeight: FontWeight.w800,
+      color: Colors.white);
 
   @override
-  TextStyle style16W800Green = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 16, fontWeight: FontWeight.w800, color: Colors.green);
+  TextStyle style16W800Green = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 16,
+      fontWeight: FontWeight.w800,
+      color: Colors.green);
 
-  TextStyle style16W800Red = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 16, fontWeight: FontWeight.w800, color: Colors.red);
+  TextStyle style16W800Red = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 16,
+      fontWeight: FontWeight.w800,
+      color: Colors.red);
 
   @override
-  TextStyle style16W800Orange = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 16, fontWeight: FontWeight.w800, color: Colors.orange);
+  TextStyle style16W800Orange = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 16,
+      fontWeight: FontWeight.w800,
+      color: Colors.orange);
 
-  TextStyle style16W800Blue = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 16, fontWeight: FontWeight.w800, color: Colors.blue);
+  TextStyle style16W800Blue = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 16,
+      fontWeight: FontWeight.w800,
+      color: Colors.blue);
 
-  TextStyle style16W600Grey = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 16, fontWeight: FontWeight.w600, color: Colors.grey);
+  TextStyle style16W600Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: Colors.grey);
 
-  TextStyle style16W800Grey = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 16, fontWeight: FontWeight.w800, color: Colors.grey);
+  TextStyle style16W800Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 16,
+      fontWeight: FontWeight.w800,
+      color: Colors.grey);
 
   late TextStyle style18W800;
 
-  TextStyle style18W800Grey = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 18, fontWeight: FontWeight.w800, color: Colors.grey);
+  TextStyle style18W800Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 18,
+      fontWeight: FontWeight.w800,
+      color: Colors.grey);
 
-  TextStyle style18W800Orange = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 18, fontWeight: FontWeight.w800, color: Colors.orange);
+  TextStyle style18W800Orange = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 18,
+      fontWeight: FontWeight.w800,
+      color: Colors.orange);
 
   late TextStyle style20W800;
 
-  TextStyle style20W800Red = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 20, fontWeight: FontWeight.w800, color: Colors.red);
+  TextStyle style20W800Red = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 20,
+      fontWeight: FontWeight.w800,
+      color: Colors.red);
 
-  TextStyle style20W800Green = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 20, fontWeight: FontWeight.w800, color: Colors.green);
+  TextStyle style20W800Green = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 20,
+      fontWeight: FontWeight.w800,
+      color: Colors.green);
 
-  TextStyle style20W800Grey = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 20, fontWeight: FontWeight.w800, color: Colors.grey);
+  TextStyle style20W800Grey = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 20,
+      fontWeight: FontWeight.w800,
+      color: Colors.grey);
 
   late TextStyle style25W800;
   late TextStyle style25W400;
@@ -520,8 +813,12 @@ class AppTheme implements DefaultTheme{
   late TextStyle style14W600White;
 
   @override
-  TextStyle style30W800White = TextStyle(fontFamily: _font, letterSpacing: 0.6,
-      fontSize: 30, fontWeight: FontWeight.w800, color: Colors.white);
+  TextStyle style30W800White = TextStyle(
+      fontFamily: _font,
+      letterSpacing: 0.6,
+      fontSize: 30,
+      fontWeight: FontWeight.w800,
+      color: Colors.white);
 
   @override
   late Color backgroundColor;
@@ -531,6 +828,4 @@ class AppTheme implements DefaultTheme{
 
   @override
   late TextStyle style13W400U;
-
-
 }

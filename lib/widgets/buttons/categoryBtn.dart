@@ -61,7 +61,7 @@ Widget cateegoryBtn(String text, Color color, String icon, Function _callback,
             alignment: Alignment.bottomCenter,
             child: Text(
               text,
-              style: theme.style13W800,
+              style: theme.style13W400,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: direction == TextDirection.ltr
