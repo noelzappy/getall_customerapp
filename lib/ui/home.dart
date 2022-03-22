@@ -367,8 +367,41 @@ class _HomeScreenState extends State<HomeScreen> {
       // category
       //
       if (item == "category") {
-        List<Widget> list2 = [];
-        for (var e in categories) {
+        List<Widget> list2 = [
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Text(
+                  'Featured Categories',
+                  textAlign: TextAlign.left,
+                  style: theme.style12W600Grey,
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    route("allCategories");
+                  },
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('VIEW ALL'), // <-- Text
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Icon(
+                        // <-- Icon
+                        Icons.arrow_forward,
+                        size: 24.0,
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          )
+        ];
+        for (var e in categories.take(16)) {
           if (e.parent.isNotEmpty) continue;
           list2.add(
             cateegoryBtn(

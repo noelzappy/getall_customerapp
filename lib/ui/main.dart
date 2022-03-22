@@ -46,6 +46,7 @@ import 'map_near_by.dart';
 import 'theme.dart';
 import 'home.dart';
 import 'notify.dart';
+import 'allCategories.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -228,6 +229,7 @@ class _MainScreenState extends State<MainScreen> {
                     if (state == "register") RegisterScreen(),
                     if (state == "service") ServicesScreen(),
                     if (state == "category") CategoryScreen(),
+                    if (state == 'allCategories') AllCategoriesScreen(),
                     if (state == "favorite") FavoriteScreen(),
                     if (state == "favorite_providers")
                       FavoriteProvidersScreen(),
