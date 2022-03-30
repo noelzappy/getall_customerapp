@@ -154,19 +154,8 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               width: windowWidth * 0.3,
               height: windowWidth * 0.3,
-              child: theme.homeLogoAsset
-                  ? Image.asset("assets/ondemands/ondemand23.png",
-                      fit: BoxFit.contain)
-                  : CachedNetworkImage(
-                      imageUrl: theme.homeLogo,
-                      imageBuilder: (context, imageProvider) => Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: imageProvider,
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          )),
+              child:
+                 null
               //Image.asset("assets/ondemands/ondemand23.png", fit: BoxFit.cover),
             ),
             margin: EdgeInsets.only(bottom: 10, right: 20, left: 20),
