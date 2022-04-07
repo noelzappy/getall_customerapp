@@ -66,26 +66,21 @@ class _SplashScreenState extends State<SplashScreen> {
     return Timer(duration, _startNextScreen);
   }
 
+
   @override
   Widget build(BuildContext context) {
     windowWidth = MediaQuery.of(context).size.width;
     windowHeight = MediaQuery.of(context).size.height;
-    windowSize = min(windowWidth, windowHeight);
     return Scaffold(
         body: Stack(
-      children: <Widget>[
-        Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                  width: windowWidth,
-                  height: windowWidth,
-                  child: Image.asset("assets/splash.gif", fit: BoxFit.contain)),
-            ],
-          ),
-        ),
-      ],
-    ));
+          children: <Widget>[
+            Container(
+              child:  Image.asset("assets/splash.gif", fit: BoxFit.contain),
+            ),
+
+          ],
+        )
+
+    );
   }
 }

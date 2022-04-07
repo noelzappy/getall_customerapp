@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             if (!_mainModel.searchActivate)
-              NestedScrollView(
+       NestedScrollView(
                   controller: _scrollController,
                   headerSliverBuilder:
                       (BuildContext context, bool innerBoxIsScrolled) {
@@ -156,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: windowWidth * 0.3,
               child:
                  null
-              //Image.asset("assets/ondemands/ondemand23.png", fit: BoxFit.cover),
+              // Image.asset("assets/ondemands/ondemand23.png", fit: BoxFit.cover),
             ),
             margin: EdgeInsets.only(bottom: 10, right: 20, left: 20),
           ),
@@ -166,6 +166,29 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _titleSmall() {
+
+    var _scrollPosition = _scrollController.position.pixels;
+
+     Widget centerLogo () {
+       if(_scrollPosition > 100) {
+         return Image.asset("assets/login_logo.png", height: windowHeight );
+       }
+       return Spacer();
+     }
+
+    Widget notifIcon () {
+      if(_scrollPosition > 100) {
+       return  IconButton(
+          icon: Image.asset("assets/ondemands/notifyicon.png"),
+          onPressed: () {
+            route("notify");
+          },
+        );
+      }
+      return Spacer();
+    }
+
+
     return Container(
         alignment: Alignment.bottomLeft,
         padding: EdgeInsets.only(bottom: _scroller, top: 25),
@@ -188,13 +211,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           Spacer(),
+         centerLogo(),
           Spacer(),
-          IconButton(
-            icon: Image.asset("assets/ondemands/notifyicon.png"),
-            onPressed: () {
-              route("notify");
-            },
-          ),
+       notifIcon(),
         ]));
   }
 
