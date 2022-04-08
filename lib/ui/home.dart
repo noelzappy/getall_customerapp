@@ -8,12 +8,14 @@ import 'package:ondemandservice/ui/search.dart';
 import 'package:ondemandservice/ui/service_item.dart';
 import 'package:ondemandservice/widgets/buttons/button202m.dart';
 import 'package:ondemandservice/widgets/buttons/categoryBtn.dart';
+import 'package:ondemandservice/widgets/buttons/newCategoryBtn.dart';
 import 'package:ondemandservice/widgets/horizontal_articles.dart';
 import 'strings.dart';
 import 'elements/address.dart';
 import 'theme.dart';
 import 'package:ondemandservice/widgets/buttons/button202nn.dart';
 import 'package:provider/provider.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -167,25 +169,37 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _titleSmall() {
 
-    var _scrollPosition = _scrollController.position.pixels;
 
      Widget centerLogo () {
-       if(_scrollPosition > 100) {
-         return Image.asset("assets/login_logo.png", height: windowHeight );
+       if (_scrollController.hasClients) {
+         var _scrollPosition = _scrollController.position.pixels;
+         if (_scrollPosition > 100) {
+           return Image.asset("assets/login_logo.png", height: windowHeight);
+         }
        }
        return Spacer();
      }
 
     Widget notifIcon () {
-      if(_scrollPosition > 100) {
-       return  IconButton(
-          icon: Image.asset("assets/ondemands/notifyicon.png"),
-          onPressed: () {
-            route("notify");
-          },
-        );
+      if (_scrollController.hasClients) {
+        var _scrollPosition = _scrollController.position.pixels;
+        if (_scrollPosition > 100) {
+          return IconButton(
+            icon: Image.asset("assets/ondemands/notifyicon.png"),
+            onPressed: () {
+              route("notify");
+            },
+          );
+        } else {
+          return Spacer();
+        }
       }
-      return Spacer();
+      return IconButton(
+        icon: Image.asset("assets/ondemands/notifyicon.png"),
+        onPressed: () {
+          route("notify");
+        },
+      );
     }
 
 
@@ -412,21 +426,23 @@ class _HomeScreenState extends State<HomeScreen> {
         for (var e in categories.take(16)) {
           if (e.parent.isNotEmpty) continue;
           list2.add(
-            cateegoryBtn(
-                getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
-                () {
-              _mainModel.categoryData = e;
-              route("category");
-            }, windowWidth / 4 - 20, windowWidth * 0.25,
-                direction: strings.direction),
 
-            // button157(
+
+            // newCategoryBtn(
             //     getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
             //     () {
             //   _mainModel.categoryData = e;
             //   route("category");
-            // }, windowWidth / 2 - 20, windowWidth * 0.25,
+            // }, windowWidth / 1- 20, windowWidth * 0.25,
             //     direction: strings.direction),
+
+            button157(
+                getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
+                () {
+              _mainModel.categoryData = e;
+              route("category");
+            }, windowWidth / 1 - 20, windowWidth * 0.25,
+                direction: strings.direction),
           );
         }
         list.add(Container(

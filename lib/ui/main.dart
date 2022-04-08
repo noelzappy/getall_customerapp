@@ -176,10 +176,11 @@ class _MainScreenState extends State<MainScreen> {
                         child: BottomBar13(
                             colorBackground:
                                 (theme.darkMode) ? Colors.black : Colors.white,
-                            colorSelect: Colors.blue,
+                            colorSelect: Colors.orange,
                             colorUnSelect: Colors.grey,
                             textStyle: theme.style10W600Grey,
-                            textStyleSelect: theme.style12W600Blue,
+                            textStyleSelect: theme.style12W600Orange,
+
                             radius: 10,
                             callback: (int y) {
                               if (y == 0) state = "home";
