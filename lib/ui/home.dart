@@ -441,8 +441,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 () {
               _mainModel.categoryData = e;
               route("category");
-            }, windowWidth / 1 - 20, windowWidth * 0.25,
-                direction: strings.direction),
+            }, windowWidth / 1 - 20, windowWidth * 0.125,
+                direction: TextDirection.rtl),
           );
         }
         list.add(Container(
