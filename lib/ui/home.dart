@@ -16,7 +16,6 @@ import 'theme.dart';
 import 'package:ondemandservice/widgets/buttons/button202nn.dart';
 import 'package:provider/provider.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -89,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             if (!_mainModel.searchActivate)
-       NestedScrollView(
+              NestedScrollView(
                   controller: _scrollController,
                   headerSliverBuilder:
                       (BuildContext context, bool innerBoxIsScrolled) {
@@ -154,12 +153,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             alignment: Alignment.bottomRight,
             child: Container(
-              width: windowWidth * 0.3,
-              height: windowWidth * 0.3,
-              child:
-                 null
-              // Image.asset("assets/ondemands/ondemand23.png", fit: BoxFit.cover),
-            ),
+                width: windowWidth * 0.3, height: windowWidth * 0.3, child: null
+                // Image.asset("assets/ondemands/ondemand23.png", fit: BoxFit.cover),
+                ),
             margin: EdgeInsets.only(bottom: 10, right: 20, left: 20),
           ),
         ],
@@ -168,19 +164,17 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _titleSmall() {
+    Widget centerLogo() {
+      if (_scrollController.hasClients) {
+        var _scrollPosition = _scrollController.position.pixels;
+        if (_scrollPosition > 100) {
+          return Image.asset("assets/login_logo.png", height: windowHeight);
+        }
+      }
+      return Spacer();
+    }
 
-
-     Widget centerLogo () {
-       if (_scrollController.hasClients) {
-         var _scrollPosition = _scrollController.position.pixels;
-         if (_scrollPosition > 100) {
-           return Image.asset("assets/login_logo.png", height: windowHeight);
-         }
-       }
-       return Spacer();
-     }
-
-    Widget notifIcon () {
+    Widget notifIcon() {
       if (_scrollController.hasClients) {
         var _scrollPosition = _scrollController.position.pixels;
         if (_scrollPosition > 100) {
@@ -203,31 +197,45 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
 
+    Widget _topLogo() {
+      if (_scrollController.hasClients) {
+        var _scrollPosition = _scrollController.position.pixels;
+        if (_scrollPosition > 100) {
+          return Spacer() ;
+        }
+      }
+      return Image.asset("assets/login_logo.png", height: windowHeight * 0.05);
+    }
+
+    Widget _showTitle() {
+      return Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _topLogo(),
+            Text(
+              !_mainModel.searchActivate ? strings.get(93) : strings.get(122),
+
+              /// "Home services", // "Search",
+              style: theme.style16W800,
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Text(strings.get(94), // Find what you need
+                style: theme.style10W600Grey),
+          ]);
+    }
+
     return Container(
         alignment: Alignment.bottomLeft,
         padding: EdgeInsets.only(bottom: _scroller, top: 25),
         child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                !_mainModel.searchActivate ? strings.get(93) : strings.get(122),
-
-                /// "Home services", // "Search",
-                style: theme.style16W800,
-              ),
-              SizedBox(
-                height: 3,
-              ),
-              Text(strings.get(94), // Find what you need
-                  style: theme.style10W600Grey),
-            ],
-          ),
+          _showTitle(),
           Spacer(),
-         centerLogo(),
+          centerLogo(),
           Spacer(),
-       notifIcon(),
+          notifIcon(),
         ]));
   }
 
@@ -426,23 +434,21 @@ class _HomeScreenState extends State<HomeScreen> {
         for (var e in categories.take(16)) {
           if (e.parent.isNotEmpty) continue;
           list2.add(
-
-
-            // newCategoryBtn(
-            //     getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
-            //     () {
-            //   _mainModel.categoryData = e;
-            //   route("category");
-            // }, windowWidth / 1- 20, windowWidth * 0.25,
-            //     direction: strings.direction),
-
-            button157(
+            cateegoryBtn(
                 getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
                 () {
               _mainModel.categoryData = e;
               route("category");
-            }, windowWidth / 1 - 20, windowWidth * 0.125,
-                direction: TextDirection.rtl),
+            }, windowWidth / 4 - 20, windowWidth * 0.25,
+                direction: strings.direction),
+            //
+            // button157(
+            //     getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
+            //     () {
+            //   _mainModel.categoryData = e;
+            //   route("category");
+            // }, windowWidth / 1 - 20, windowWidth * 0.125,
+            //     direction: TextDirection.rtl),
           );
         }
         list.add(Container(

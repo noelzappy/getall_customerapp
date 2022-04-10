@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:ondemandservice/model/model.dart';
 import 'package:ondemandservice/ui/service_item.dart';
 import 'package:ondemandservice/widgets/buttons/categoryBtn.dart';
+import 'package:ondemandservice/widgets/buttons/newCategoryBtn.dart';
 import 'strings.dart';
 import 'theme.dart';
 import 'package:provider/provider.dart';
@@ -69,7 +70,7 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen> {
                         clipper:
                             ClipPathClass23((_scroller < 5) ? 5 : _scroller),
                         child: Container(
-                            color: _mainModel.categoryData.color,
+                            color: Colors.orange,
                             child: Stack(
                               children: [
                                 FlexibleSpaceBar(
@@ -102,6 +103,7 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen> {
   _titleSmall() {
     return Container(
         alignment: Alignment.bottomLeft,
+
         padding:
             EdgeInsets.only(bottom: _scroller, left: 20, right: 20, top: 25),
         child: Column(
@@ -122,49 +124,18 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen> {
   _body() {
     List<Widget> list = [];
 
-    // list.add(
-    //   Container(
-    //     margin: EdgeInsets.only(left: 20, right: 20),
-    //     child: Edit26(
-    //       hint: "Search Categories",
-
-    //       /// "Search service",
-    //       color: (theme.darkMode) ? Colors.black : Colors.white,
-    //       style: theme.style14W400,
-    //       decor: decor,
-    //       useAlpha: false,
-    //       icon: Icons.search,
-    //       controller: _controllerSearch,
-    //       onChangeText: (String val) {
-    //         _scrollController.jumpTo(96);
-    //         _searchText = val;
-    //       },
-    //       onTap: () {
-    //         Future.delayed(const Duration(milliseconds: 500), () {
-    //           _scrollController.jumpTo(96);
-    //         });
-    //       },
-    //     ),
-    //   ),
-    // );
 
     for (var e in categories.take(16)) {
       if (e.parent.isNotEmpty) continue;
       list.add(
-        cateegoryBtn(
+        newCategoryBtn(
             getTextByLocale(e.name, strings.locale), e.color, e.serverPath, () {
           _mainModel.categoryData = e;
           route("category");
-        }, windowWidth / 3 - 20, windowWidth * 0.25,
+        }, windowWidth / 1 - 20, windowWidth * 0.12,
             direction: strings.direction),
 
-        // button157(
-        //     getTextByLocale(e.name, strings.locale), e.color, e.serverPath,
-        //     () {
-        //   _mainModel.categoryData = e;
-        //   route("category");
-        // }, windowWidth / 2 - 20, windowWidth * 0.25,
-        //     direction: strings.direction),
+
       );
     }
 
@@ -183,8 +154,5 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen> {
     ]));
   }
 
-  // _openDetails(String _tag, ProductData item){
-  //   _mainModel.currentService = item;
-  //   route("service");
-  // }
+
 }
