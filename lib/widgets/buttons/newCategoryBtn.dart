@@ -13,68 +13,67 @@ Widget newCategoryBtn(String text, Color color, String icon, Function _callback,
     size: Size(width, height), // button width and height
 
     child: Material(
-      color: color,// button color
-      borderRadius: BorderRadius.circular( width * 0.02),
-      child: ListView( 
-        padding: EdgeInsets.only( left: width * 0.05, ),
-        children: [
-        InkWell(
-          splashColor: Colors.white, // splash color
-          onTap: () {
-            _callback();
-          }, // button pressed
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Row(
-                children: [
-                  Container(
-                      child: CachedNetworkImage(
-                          imageUrl: icon,
-                          errorWidget: (
+        color: color, // button color
+        borderRadius: BorderRadius.circular(width * 0.02),
+        child: Container(
+          padding: EdgeInsets.only(
+            left: width * 0.05,
+          ),
+          child: InkWell(
+            splashColor: Colors.white, // splash color
+            onTap: () {
+              _callback();
+            }, // button pressed
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Row(
+                  children: [
+                    Container(
+                        child: CachedNetworkImage(
+                            imageUrl: icon,
+                            errorWidget: (
                               BuildContext context,
                               String url,
                               dynamic error,
-                              ) {
-                            return Icon(Icons.error);
-                          },
-                          placeholder: (context, url) => UnconstrainedBox(
-                              child: Container(
-                                alignment: Alignment.center,
-                                width: 30,
-                                height: 30,
-                                child: CircularProgressIndicator(
-                                  color: aTheme.mainColor,
-                                ),
-                              )),
-                          imageBuilder: (context, imageProvider) => Container(
-                            width: width * 0.08,
-                            margin:EdgeInsets.only(right: 20),
-                            alignment: Alignment.center,
-                            child: Container(
-                              width: width,
-                              height: height,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: imageProvider,
-                                    fit: BoxFit.contain,
-                                  )),
-                            ),
-                          ))),
-
-                  Expanded(
-                    child: Text(text,
-                        style: aTheme.style12W800W,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left),
-                  )
-                ],
-              )
-            ],
+                            ) {
+                              return Icon(Icons.error);
+                            },
+                            placeholder: (context, url) => UnconstrainedBox(
+                                    child: Container(
+                                  alignment: Alignment.center,
+                                  width: 30,
+                                  height: 30,
+                                  child: CircularProgressIndicator(
+                                    color: aTheme.mainColor,
+                                  ),
+                                )),
+                            imageBuilder: (context, imageProvider) => Container(
+                                  width: width * 0.08,
+                                  margin: EdgeInsets.only(right: 20),
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                    width: width,
+                                    height: height,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                      image: imageProvider,
+                                      fit: BoxFit.contain,
+                                    )),
+                                  ),
+                                ))),
+                    Expanded(
+                      child: Text(text,
+                          style: aTheme.style12W800W,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
-        ),
-      ],)
-    ),
+        )),
   );
 
   //

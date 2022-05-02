@@ -103,7 +103,6 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen> {
   _titleSmall() {
     return Container(
         alignment: Alignment.bottomLeft,
-
         padding:
             EdgeInsets.only(bottom: _scroller, left: 20, right: 20, top: 25),
         child: Column(
@@ -124,8 +123,7 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen> {
   _body() {
     List<Widget> list = [];
 
-
-    for (var e in categories.take(16)) {
+    for (var e in categories) {
       if (e.parent.isNotEmpty) continue;
       list.add(
         newCategoryBtn(
@@ -134,8 +132,6 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen> {
           route("category");
         }, windowWidth / 1 - 20, windowWidth * 0.12,
             direction: strings.direction),
-
-
       );
     }
 
@@ -153,6 +149,4 @@ class _AllCategoriesScreenState extends State<AllCategoriesScreen> {
           )),
     ]));
   }
-
-
 }

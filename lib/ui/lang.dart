@@ -72,7 +72,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                               color: (theme.darkMode) ? Colors.black : Colors.white,
                               child: FlexibleSpaceBar(
                             collapseMode: CollapseMode.pin,
-                            background: _title(),
+                            // background: _title(),
                             titlePadding: EdgeInsets.only(bottom: 10, left: 20, right: 20),
                             title: _titleSmall()
                           )),

@@ -102,7 +102,7 @@ class _JobInfoScreenState extends State<JobInfoScreen>  with TickerProviderState
 
   _getList(){
     List<Widget> list = [];
-
+  
     var _date = strings.get(109); /// "Any Time",
     if (!currentOrder.anyTime)
       _date = appSettings.getDateTimeString(currentOrder.selectTime);
@@ -167,7 +167,7 @@ class _JobInfoScreenState extends State<JobInfoScreen>  with TickerProviderState
     //
     bool _current = false;
     for (var item in appSettings.statuses){
-      // date
+
       var _date = "";
       if (!_current){
         DateTime _time = currentOrder.getHistoryDate(item.id).time;
@@ -195,7 +195,7 @@ class _JobInfoScreenState extends State<JobInfoScreen>  with TickerProviderState
           _date = "$_date\n$t";
         }
       }
-
+print(item.serverPath);
       list.add(Card44(image: item.serverPath,
         text1: getTextByLocale(item.name, strings.locale),
         style1: theme.style16W800,
